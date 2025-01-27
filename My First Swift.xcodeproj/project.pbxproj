@@ -6,6 +6,12 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		E979F6482D3F7B99005F46CE /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = E979F6472D3F7B99005F46CE /* SDWebImageSwiftUI */; };
+		E979F64A2D3F7B9F005F46CE /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = E979F6492D3F7B9F005F46CE /* SDWebImage */; };
+		E979F64C2D3F7BA4005F46CE /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = E979F64B2D3F7BA4005F46CE /* SDWebImageMapKit */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		E90D0BFC2D10EE0C003EAE82 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -52,6 +58,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E979F64A2D3F7B9F005F46CE /* SDWebImage in Frameworks */,
+				E979F64C2D3F7BA4005F46CE /* SDWebImageMapKit in Frameworks */,
+				E979F6482D3F7B99005F46CE /* SDWebImageSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +87,7 @@
 				E90D0BEC2D10EE0A003EAE82 /* My First Swift */,
 				E90D0BFE2D10EE0C003EAE82 /* My First SwiftTests */,
 				E90D0C082D10EE0C003EAE82 /* My First SwiftUITests */,
+				E979F6462D3F7B8C005F46CE /* Frameworks */,
 				E90D0BEB2D10EE0A003EAE82 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -90,6 +100,13 @@
 				E90D0C052D10EE0C003EAE82 /* My First SwiftUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		E979F6462D3F7B8C005F46CE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -112,6 +129,9 @@
 			);
 			name = "My First Swift";
 			packageProductDependencies = (
+				E979F6472D3F7B99005F46CE /* SDWebImageSwiftUI */,
+				E979F6492D3F7B9F005F46CE /* SDWebImage */,
+				E979F64B2D3F7BA4005F46CE /* SDWebImageMapKit */,
 			);
 			productName = "My First Swift";
 			productReference = E90D0BEA2D10EE0A003EAE82 /* My First Swift.app */;
@@ -195,6 +215,10 @@
 			);
 			mainGroup = E90D0BE12D10EE0A003EAE82;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				E979F6442D3F7993005F46CE /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				E979F6452D3F79D5005F46CE /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = E90D0BEB2D10EE0A003EAE82 /* Products */;
 			projectDirPath = "";
@@ -583,6 +607,43 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E979F6442D3F7993005F46CE /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.20.0;
+			};
+		};
+		E979F6452D3F79D5005F46CE /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E979F6472D3F7B99005F46CE /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E979F6452D3F79D5005F46CE /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+		E979F6492D3F7B9F005F46CE /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E979F6442D3F7993005F46CE /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+		E979F64B2D3F7BA4005F46CE /* SDWebImageMapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E979F6442D3F7993005F46CE /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImageMapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E90D0BE22D10EE0A003EAE82 /* Project object */;
 }
