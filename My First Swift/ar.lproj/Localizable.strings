@@ -1,0 +1,10 @@
+/* 
+  LocalizableResource.strings
+  My First Swift
+
+  Created by Qamar khan on 1/28/25.
+  
+*/
+
+"email_placeholder" = "Email";
+"password_placeholder" = "Password";
