@@ -57,8 +57,8 @@ struct LoginScreen: View {
                 placeholder: "Password",
                 text: $viewModel.uiState.userPassword,
                 error: viewModel.uiState.passwordError,
-                isSecure: true,
-                showPassword: $viewModel.uiState.showPassword
+                isSecure: true
+                // showPassword: viewModel.uiState.showPassword
             )
         }
     }
