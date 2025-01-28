@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct PrimaryButton: View {
-    let title: String
+    let title: LocalizedStringKey
     let isEnabled: Bool
     let action: () -> Void
     

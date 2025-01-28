@@ -6,5 +6,49 @@
   
 */
 
-"email_placeholder" = "Email";
-"password_placeholder" = "Password";
+// <!-- Auth Feature Strings  -->
+"email_placeholder" = "البريد الإلكتروني";
+"password_placeholder" = "كلمة المرور";
+"login_text" = "تسجيل الدخول";
+"lorem_ispum" = "لوريم إيبسوم";
+"sign_in_title" = "تسجيل الدخول إلى حسابك";
+"no_account" = "ليس لديك حساب؟";
+"sign_up" = "إنشاء حساب";
+"remember_me" = "تذكرني";
+"forgot_password" = "هل نسيت كلمة المرور؟";
+"or_login_with" = "أو تسجيل الدخول بواسطة";
+"google" = "جوجل";
+"facebook" = "فيسبوك";
+"terms_of_service" = "شروط الخدمة";
+"data_processing_agreement" = "اتفاقية معالجة البيانات";
+"agree_to_terms" = "من خلال التسجيل، فإنك توافق على";
+"and_text" = "و";
+
+// <!-- Dashboard Feature Strings  -->
+"dashboard_title" = "لوحة التحكم";
+"movie_title" = "العنوان";
+"movie_adult" = "للكبار: %@";
+"movie_adult_yes" = "نعم";
+"movie_adult_no" = "لا";
+"movie_release_date" = "تاريخ الإصدار: %@";
+"movie_popularity" = "الشعبية: %.1f";
+"movie_rating" = "%.1f";
+"genre_drama" = "دراما";
+"genre_sci_fi" = "خيال علمي";
+"genre_action" = "أكشن";
+"watch_trailer" = "مشاهدة المقطع الدعائي";
+"fetch_details_failed" = "فشل جلب التفاصيل";
+"youtube_link_not_available" = "رابط يوتيوب غير متاح";
+
+// <!-- Coming Soon Feature Strings  -->
+"coming_soon" = "القادم قريبًا";
+"know_more_tapped" = "تم النقر على معرفة المزيد";
+"know_more" = "معرفة المزيد";
+
+// <!-- General Error View Strings  -->
+"error_message" = "عذرًا! حدث خطأ ما";
+"try_again" = "حاول مرة أخرى";
+
+// <!-- Common Strings  -->
+"share" = "مشاركة";
+"cancel" = "إلغاء";

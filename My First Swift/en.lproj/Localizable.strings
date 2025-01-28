@@ -1,0 +1,54 @@
+/* 
+  LocalizableResource.strings
+  My First Swift
+
+  Created by Qamar khan on 1/28/25.
+  
+*/
+
+// <!-- Auth Feature Strings  -->
+"email_placeholder" = "Email";
+"password_placeholder" = "Password";
+"login_text" = "Login";
+"lorem_ispum" = "Lorem ispum";
+"sign_in_title" = "Sign in to your Account";
+"no_account" = "Don't have an account?";
+"sign_up" = "Sign up";
+"remember_me" = "Remember me";
+"forgot_password" = "Forgot Password?";
+"or_login_with" = "Or login with";
+"google" = "Google";
+"facebook" = "Facebook";
+"terms_of_service" = "Terms of Service";
+"data_processing_agreement" = "Data Processing Agreement";
+"agree_to_terms" = "By signing up, you agree to the";
+"and_text" = "and";
+
+// <!--  Dashboard Feature Strings  -->
+"dashboard_title" = "Dashboard";
+"movie_title" = "Title";
+"movie_adult" = "Adult: %@";
+"movie_adult_yes" = "Yes";
+"movie_adult_no" = "No";
+"movie_release_date" = "Release Date: %@";
+"movie_popularity" = "Popularity: %.1f";
+"movie_rating" = "%.1f";
+"genre_drama" = "Drama";
+"genre_sci_fi" = "Sci-Fi";
+"genre_action" = "Action";
+"watch_trailer" = "Watch Trailer";
+"fetch_details_failed" = "Fetch Details Failed";
+"youtube_link_not_available" = "YouTube link is not available";
+
+// <!-- comming soon feature string  -->
+"coming_soon" = "COMING SOON";
+"know_more_tapped" = "Know more tapped";
+"know_more" = "Know more";
+
+// <!-- General Error View strings  -->
+"error_message" = "Oops! Something went wrong";
+"try_again" = "Try Again";
+
+// <!-- Common strings  -->
+"share" = "Share";
+"cancel" = "Cancel";

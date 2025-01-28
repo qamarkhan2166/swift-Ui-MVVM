@@ -48,24 +48,23 @@ struct LoginScreen: View {
     private var inputFieldsSection: some View {
         VStack(spacing: 16) {
             CustomTextField(
-                placeholder: "Email",
+                placeholder: AuthStrings.emailPlaceholder.localizedKey,
                 text: $viewModel.uiState.userEmail,
                 error: viewModel.uiState.emailError
             )
             
             CustomTextField(
-                placeholder: "Password",
+                placeholder: AuthStrings.passwordPlaceholder.localizedKey,
                 text: $viewModel.uiState.userPassword,
                 error: viewModel.uiState.passwordError,
                 isSecure: true
-                // showPassword: viewModel.uiState.showPassword
             )
         }
     }
     
     private func loginButtonSection() -> some View {
         PrimaryButton(
-            title: "Login",
+            title: AuthStrings.loginBtnText.localizedKey,
             isEnabled: viewModel.uiState.isLoginEnabled
         ) {
             Task {
@@ -87,22 +86,22 @@ private func headerSection() -> some View {
                 spacing: 32
             ) {
                 HStack {
-                    Image(systemName: "globe")
+                    Image(systemName: IconNames.globe.value)
                         .resizable().scaledToFit().frame(width: 20, height: 20)
                         .foregroundColor(.white)
-                    Text("Lorem ispum")
+                    Text(AuthStrings.loremIpsum.localizedKey)
                         .font(.body).bold()
                         .foregroundColor(.white)
                     
                 }
-                Text("Sign in to your Account")
+                Text(AuthStrings.signInTitle.localizedKey)
                     .font(.title2).bold()
                     .foregroundColor(.white)
             }.padding(.top, 32)
             
             HStack {
-                Text("Don't have an account?").font(.caption).bold().foregroundStyle(.white)
-                Text("Sign up").font(.caption).bold().foregroundColor(.blue).underline()
+                Text(AuthStrings.noAccount.localizedKey).font(.caption).bold().foregroundStyle(.white)
+                Text(AuthStrings.signUp.localizedKey).font(.caption).bold().foregroundColor(.blue).underline()
             }
         }
         Spacer()
@@ -115,11 +114,11 @@ private func headerSection() -> some View {
 private func optionsSection() -> some View {
     HStack {
         Toggle(isOn: .constant(false)) {
-            Text("Remember me")
+            Text(AuthStrings.rememberMe.localizedKey)
         }
         .toggleStyle(CheckboxToggleStyle())
         Spacer()
-        Text("Forgot Password?")
+        Text(AuthStrings.forgotPassword.localizedKey)
             .foregroundColor(.blue)
     }
     .font(.subheadline).padding(.top, 10)
@@ -129,7 +128,7 @@ private func optionsSection() -> some View {
 struct CheckboxToggleStyle: ToggleStyle {
     func makeBody(configuration: Configuration) -> some View {
         HStack {
-            Image(systemName: configuration.isOn ? "checkmark.square" : "square")
+            Image(systemName: configuration.isOn ? IconNames.checkMarkSquare.value : IconNames.checkMarkOnlySquare.value)
                 .onTapGesture { configuration.isOn.toggle() }
             configuration.label
         }
@@ -142,15 +141,15 @@ private func socialMediaLoginSection(
     actionFacebook: @escaping () -> Void
 ) -> some View {
     VStack(spacing: 12) {
-        Text("Or login with")
+        Text(AuthStrings.orLoginWith.localizedKey)
         HStack(spacing: 16) {
-            socialMediaButton(icon: "google", label: "Google", action: actionGoogle)
-            socialMediaButton(icon: "facebook_icon", label: "Facebook", action: actionFacebook)
+            socialMediaButton(icon: IconNames.google.value, label: AuthStrings.google.localizedKey, action: actionGoogle)
+            socialMediaButton(icon: IconNames.facebook.value, label: AuthStrings.facebook.localizedKey, action: actionFacebook)
         }
     }.padding(.top, 20)
 }
 
-private func socialMediaButton(icon: String, label: String, action: @escaping () -> Void) -> some View {
+private func socialMediaButton(icon: String, label: LocalizedStringKey, action: @escaping () -> Void) -> some View {
     HStack {
         Image(icon)
         Text(label)
@@ -172,18 +171,18 @@ private func socialMediaButton(icon: String, label: String, action: @escaping ()
 @ViewBuilder
 private func footerSection() -> some View {
     VStack(spacing: 8) {
-        Text("By signing up, you agree to the")
+        Text(AuthStrings.agreeToTerms.localizedKey)
             .foregroundColor(Color.gray)
             .multilineTextAlignment(.center)
             .font(.footnote)
         
         HStack(spacing: 4) {
-            Text("Terms of Service")
+            Text(AuthStrings.termsOfService.localizedKey)
                 .foregroundColor(Color.black)
                 .fontWeight(.bold)
-            Text("and")
+            Text(AuthStrings.andText.localizedKey)
                 .foregroundColor(Color.gray)
-            Text("Data Processing Agreement")
+            Text(AuthStrings.dataProcessingAgreement.localizedKey)
                 .foregroundColor(Color.black)
                 .fontWeight(.bold)
         }

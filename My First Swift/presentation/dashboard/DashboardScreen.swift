@@ -29,7 +29,7 @@ struct DashboardScreen: View {
                 }
             }
         }
-        .navigationTitle("Dashboard")
+        .navigationTitle(DashboardStrings.DashboardTitle.localizedKey)
         .searchable(text: $viewModel.uiState.searchText, placement: .navigationBarDrawer(displayMode: .always))
         .onChange(of: viewModel.uiState.searchText) { oldValue, newValue in
             if oldValue != newValue {

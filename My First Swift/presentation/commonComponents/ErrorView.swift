@@ -17,7 +17,7 @@ struct ErrorView: View {
                 .font(.system(size: 50))
                 .foregroundColor(.red)
             
-            Text("Oops! Something went wrong")
+            Text(GeneralError.errorMessage.localizedKey)
                 .font(.headline)
             
             Text(errorMessage)
@@ -27,7 +27,7 @@ struct ErrorView: View {
                 .padding(.horizontal)
             
             Button(action: onRetry) {
-                Text("Try Again")
+                Text(GeneralError.tryAgain.localizedKey)
                     .fontWeight(.semibold)
                     .foregroundColor(.white)
                     .padding(.horizontal, 24)

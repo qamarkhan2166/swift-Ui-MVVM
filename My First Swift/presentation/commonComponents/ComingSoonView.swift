@@ -20,15 +20,15 @@ struct ComingSoonView: View {
                 Spacer()
                 
                 // "COMING SOON" Text
-                Text("COMING SOON")
+                Text(ComingSoon.comingSoon.localizedKey)
                     .font(.system(size: 24, weight: .bold))
                     .foregroundColor(Color.blue)
                 
                 // "Know more" Button
                 Button(action: {
-                    print("Know more tapped")
+                    print(ComingSoon.knowMoreTapped.localizedString)
                 }) {
-                    Text("Know more")
+                    Text(ComingSoon.knowMore.localizedKey)
                         .font(.system(size: 16, weight: .medium))
                         .foregroundColor(.white)
                         .padding(.vertical, 12)

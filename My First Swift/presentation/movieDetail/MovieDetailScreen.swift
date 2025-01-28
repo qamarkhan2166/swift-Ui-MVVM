@@ -18,7 +18,7 @@ struct MovieDetailScreen: View {
             VStack(alignment: .leading, spacing: 16) {
                 // Movie Poster and Header
                 ZStack(alignment: .bottomLeading) {
-                    WebImage(url: URL(string: "https://image.tmdb.org/t/p/original\(movie.posterPath)"))
+                    WebImage(url: URL(string: "\(Constants.baseImageURL)\(movie.posterPath)"))
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .scaledToFill()
@@ -35,7 +35,7 @@ struct MovieDetailScreen: View {
                     HStack {
                         VStack(alignment: .leading, spacing: 8) {
                             HStack {
-                                Image(systemName: "star.fill")
+                                Image(systemName: IconNames.filledStar.value)
                                     .foregroundColor(.yellow)
                                     .font(.subheadline)
                                 Text("\(String(format: "%.1f", movie.voteAverage))(\(movie.voteCount))")
@@ -58,18 +58,18 @@ struct MovieDetailScreen: View {
                 
                 // Movie Information
                 VStack(alignment: .leading, spacing: 8) {
-                    Text("Adult: \(movie.adult ? "Yes" : "No")")
+                    Text(String(format: DashboardStrings.movieAdult.localizedString, movie.adult ? DashboardStrings.movieAdultYes.localizedString : DashboardStrings.movieAdultNo.localizedString))
                         .font(.subheadline)
                         .foregroundColor(Color.black.opacity(0.5))
                     
-                    Text("Release Date: \(movie.releaseDate)")
+                    Text(String(format: DashboardStrings.movieReleaseDate.localizedString, movie.releaseDate))
                         .font(.subheadline)
                         .foregroundColor(Color.black.opacity(0.5))
                     
                     HStack(spacing: 8) {
-                        GenreTagView(genre: "drama")
-                        GenreTagView(genre: "sci-fi")
-                        GenreTagView(genre: "action")
+                        GenreTagView(genre: DashboardStrings.genreDrama.localizedString)
+                        GenreTagView(genre: DashboardStrings.genreSciFi.localizedString)
+                        GenreTagView(genre: DashboardStrings.genreAction.localizedString)
                     }
                 }
                 .padding(.horizontal)
@@ -83,21 +83,21 @@ struct MovieDetailScreen: View {
                 
                 // Watch Button
                 PrimaryButton(
-                    title: "Watch Trailor",
+                    title: DashboardStrings.watchTrailer.localizedKey,
                     isEnabled: true
                 ) {
                     let youtubeLink = viewModel.uiState.youtubeLink
                     if let link = youtubeLink {
                         UIApplication.shared.open(link, options: [:], completionHandler: nil)
                     } else {
-                        print("YouTube link is not available")
+                        print(DashboardStrings.youtubeLinkNotAvailable.localizedKey)
                     }
                 }.padding(.horizontal).padding(.bottom, 20)
                 
             }
             .background(Color.white.edgesIgnoringSafeArea(.all))
             .alert(isPresented: $viewModel.uiState.showErrorAlert) {
-                Alert(title: Text("Fetch Detials Failed"), message: Text(viewModel.uiState.errorAlertMessage))
+                Alert(title: Text(DashboardStrings.fetchDetailsFailed.localizedKey), message: Text(viewModel.uiState.errorAlertMessage))
             }
             .overlay {
                 if viewModel.uiState.isLoading {

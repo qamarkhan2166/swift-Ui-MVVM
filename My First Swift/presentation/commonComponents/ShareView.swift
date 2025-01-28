@@ -20,11 +20,11 @@ struct ShareView: View {
                 Spacer()
             }
             .padding()
-            .navigationTitle("Share")
+            .navigationTitle(CommonStrings.share.localizedKey)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
-                    Button("Cancel") {
+                    Button(CommonStrings.cancel.localizedKey) {
                     }
                 }
             }
