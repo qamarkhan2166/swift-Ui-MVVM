@@ -15,7 +15,7 @@ struct MovieCard: View {
     var body: some View {
         HStack(alignment: .top, spacing: 16) {
             
-            WebImage(url: URL(string: "https://image.tmdb.org/t/p/original\(movie.posterPath)"))
+            WebImage(url: URL(string: "\(Constants.baseImageURL)\(movie.posterPath)"))
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .frame(width: 100, height: 130)
@@ -29,28 +29,30 @@ struct MovieCard: View {
                     .font(.headline)
                     .foregroundColor(.black).opacity(0.7)
                 
-                Text("Adult: \(movie.adult ? "Yes" : "No")")
+                Text(String(format: DashboardStrings.movieAdult.localizedString, movie.adult ? DashboardStrings.movieAdultYes.localizedString : DashboardStrings.movieAdultNo.localizedString))
                     .font(.subheadline)
                     .foregroundColor(.gray)
                     .opacity(0.7)
                 
-                Text("Release Date: \(movie.releaseDate)")
+                Text(String(format: DashboardStrings.movieReleaseDate.localizedString, movie.releaseDate))
                     .font(.subheadline)
-                    .foregroundColor(.gray).opacity(0.7)
+                    .foregroundColor(.gray)
+                    .opacity(0.7)
                 
-                Text("Popularity: \(movie.popularity)")
+                Text(String(format: DashboardStrings.moviePopularity.localizedString, movie.popularity))
                     .font(.subheadline)
-                    .foregroundColor(.gray).opacity(0.7)
+                    .foregroundColor(.gray)
+                    .opacity(0.7)
                 
                 HStack {
                     
                     ForEach(0..<5, id: \.self) { index in
-                        Image(systemName: index < Int(movie.voteAverage / 5) ? "star.fill" : "star")
+                        Image(systemName: index < Int(movie.voteAverage / 5) ? IconNames.filledStar.value : IconNames.nonFilledStar.value)
                             .foregroundColor(.yellow)
                     }
                     Spacer()
                     
-                    Text(String(format: "%.1f", movie.voteAverage))
+                    Text(String(format: DashboardStrings.movieRating.localizedString, movie.voteAverage))
                         .font(.subheadline)
                         .foregroundColor(.yellow)
                 }
@@ -70,4 +72,4 @@ struct MovieCard_Previews: PreviewProvider {
         MovieCard(movie: Movie.placeholder)
     }
 }
- 
+

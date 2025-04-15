@@ -8,24 +8,24 @@
 import SwiftUI
 
 struct CustomTextField: View {
-    let placeholder: String
+    let placeholder: LocalizedStringKey
     let text: Binding<String>
     let error: String?
     let isSecure: Bool
-    @Binding var showPassword: Bool
+    @State var showPassword: Bool
     
     init(
-        placeholder: String,
+        placeholder: LocalizedStringKey,
         text: Binding<String>,
         error: String? = nil,
         isSecure: Bool = false,
-        showPassword: Binding<Bool> = .constant(false)
+        showPassword: Bool = false
     ) {
         self.placeholder = placeholder
         self.text = text
         self.error = error
         self.isSecure = isSecure
-        self._showPassword = showPassword
+        self.showPassword = showPassword
     }
     
     var body: some View {
